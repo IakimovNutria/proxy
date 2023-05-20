@@ -6,6 +6,7 @@ const app = express();
 app.use('/', createProxyMiddleware({
     target: 'http://51.250.72.142:1337',
     changeOrigin: true,
+    cookieDomainRewrite: true,
     onProxyRes: function(proxyRes, req, res) {
         const cookies = proxyRes.headers['set-cookie'];
         if (cookies) {
