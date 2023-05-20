@@ -10,7 +10,7 @@ app.use('/', createProxyMiddleware({
         const cookies = proxyRes.headers['set-cookie'];
         cookies.sameSite = 'undefined';
         if (cookies) {
-            res.setHeader('Set-Cookie', cookies);
+            res.setHeader('Set-Cookie', cookies.sameSite);
         }
     }
 }));
