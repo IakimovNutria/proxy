@@ -11,7 +11,7 @@ app.use('/', createProxyMiddleware({
         const cookies = proxyRes.headers['set-cookie'];
         if (cookies) {
             const newCookies = cookies.map(cookie => cookie.replace('SameSite=Lax', 'SameSite=None;Secure'));
-            res.setHeader('Set-Cookie', newCookies);
+            res.setHeader('set-cookie', newCookies);
         }
     }
 
