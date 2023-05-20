@@ -8,6 +8,7 @@ app.use('/', createProxyMiddleware({
     changeOrigin: true,
     onProxyRes: function(proxyRes, req, res) {
         const cookies = proxyRes.headers['set-cookie'];
+        console.log(cookies);
         if (cookies) {
             res.setHeader('Set-Cookie', cookies);
         }
